@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Card with Infinite Auto Scroll</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(63, 78, 173, 0.2);
+            width: 100%;
+            max-width: 600px;
+            overflow: hidden;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            width: max-content;
+            animation: scroll 20s linear infinite;
+        }
+
+        .slides img {
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .content {
+            padding: 15px;
+        }
+
+        .content h2 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .content p {
+            font-size: 14px;
+            color: #666;
+            text-align: justify;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background-color: rgba(51, 70, 197, 0.4);
+            width: fit-content;
+            align-items: center;
+            padding: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: large;
+        }
+
+        h2:hover {
+            background-color: rgba(63, 78, 173, 0.6);
+            color: black;
+            transition: 0.3s;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: rgb(79, 77, 77);
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: rgb(54, 44, 44);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="slider">
+            <div class="slides">
+                <!-- original images -->
+                <img src="Assets/school1.jpg" alt="Temple Image 1">
+                <img src="Assets/school2.jpeg" alt="Temple Image 2">
+                <img src="Assets/school3.jpg" alt="Temple Image 3">
+                <img src="Assets/school4.avif" alt="">
+                <!-- duplicate images for seamless infinite scroll -->
+                <img src="Assets/school1.jpg" alt="Temple Image 1">
+                <img src="Assets/school2.jpeg" alt="Temple Image 2">
+                <img src="Assets/school3.jpg" alt="Temple Image 3">
+            </div>
+        </div>
+        <div class="content">
+            <h2 style="color: black;">Our School</h2>
+            <p>
+                My school is more than just a building; it is a place of learning, growth, and friendship. From the
+                moment I step through the green gate, I feel a sense of calm and excitement for the day ahead. The sign
+                above the gate proudly announces its name in clear, bold letters, Uduberena Government Primary School,
+                welcoming everyone who enters. The lush trees and bushes that fill the compound make our school feel
+                like a garden, a peaceful escape from the busy world outside.
+
+                Each classroom holds a world of knowledge waiting to be discovered. Our teachers are not just
+                instructors; they are guides who help us navigate the challenges of new subjects and encourage us to ask
+                questions. We learn about math, science, history, and literature, but we also learn important life
+                lessons about working together and being kind to one another. The school grounds are our playground,
+                where we run and laugh during recess, sharing stories and making memories that will last a lifetime.
+
+                My school has shaped me into the person I am today. It has given me the tools I need to succeed, the
+                friends who support me, and a strong sense of community. It is a place where I feel safe and happy, and
+                I am grateful for every lesson and every moment I spend there. My school is truly a special place, and I
+                am proud to call it my own.
+            </p>
+        </div>
+    </div>
+
+    <button class="btn"><a href="index.html">Back to Home</a></button>
+
+</body>
+
+</html>

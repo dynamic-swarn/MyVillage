@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temple Card with Infinite Auto Scroll</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(63, 78, 173, 0.2);
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            overflow: hidden;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            width: calc(300px * 6);
+            animation: scroll 30s linear infinite;
+        }
+
+        .slides img {
+            width: 100%;
+            max-width: 250px;
+            height: 300px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            margin: 0 0 15px;
+            color: #333;
+            font-size: 28px;
+        }
+
+        .content p {
+            font-size: 16px;
+            color: #555;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        h2 {
+            border-radius: 10px;
+            background-color: rgba(51, 70, 197, 0.4);
+            width: fit-content;
+            align-items: center;
+            padding: 8px 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h2:hover {
+            background-color: rgba(63, 78, 173, 0.6);
+            color: black;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 10px;
+            background-color: rgb(79, 77, 77);
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn a:visited {
+            color: white;
+        }
+
+        .btn:hover {
+            background-color: rgb(54, 44, 44);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .card {
+                max-width: 95%;
+            }
+
+            .slides img {
+                max-width: 150px;
+            }
+
+            .content h2 {
+                font-size: 24px;
+            }
+
+            .content p {
+                font-size: 14px;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="slider">
+            <div class="slides">
+                <img src="Assets/Paika3.webp" alt="Temple Image 1">
+                <img src="Assets/paika2.jpeg" alt="Temple Image 2">
+                <img src="Assets/paika1.jpg" alt="Temple Image 3">
+                <!-- Cloned images for infinite scroll -->
+                <img src="Assets/Paika3.webp" alt="Temple Image 1">
+                <img src="Assets/paika2.jpeg" alt="Temple Image 2">
+                <img src="Assets/paika1.jpg" alt="Temple Image 3">
+            </div>
+        </div>
+        <div class="content">
+            <h2>Paika Rebellion</h2>
+
+            <p>
+                The <strong>Paika Rebellion of 1817</strong> was one of the earliest and most significant armed
+                uprisings against British colonial rule in India. It originated in the Khurda region of present-day
+                Odisha and was led by the <strong>Paikas</strong>—a community of warrior peasants who traditionally
+                served as military retainers under the Gajapati rulers of Odisha. These warriors not only excelled in
+                combat but also received land grants in exchange for their military service, making their livelihood
+                deeply connected to the local administration and governance.<br><br>
+
+                <strong style="border-bottom: 2px solid rgb(22, 12, 12);">Background and Causes</strong><br>
+                The rebellion was fueled by a combination of economic, administrative, cultural, and social grievances.
+                After the British annexed Odisha in 1803, they imposed harsh land revenue policies that disrupted
+                traditional land ownership, leaving many Paikas deprived of their ancestral holdings. Additionally, the
+                dismantling of the existing military and governance structure marginalized local elites and created
+                widespread unrest. British interference in religious affairs, especially concerning sacred temples like
+                the one in Puri, further angered the people. Excessive taxation and exploitation compounded the
+                suffering, pushing the region toward revolt.<br><br>
+
+                <strong style="border-bottom: 2px solid rgb(22, 12, 12);">Key Events</strong><br>
+                The uprising officially began in March 1817, although tensions had been building for years. The
+                charismatic leader <strong>Bakshi Jagabandhu Bidyadhara</strong>, descended from local nobility, united
+                thousands of Paikas, peasants, and oppressed communities. The rebellion quickly spread across Khurda and
+                surrounding areas, with forts, British offices, and administrative centers attacked. The Paikas relied
+                on guerrilla tactics, their knowledge of the terrain, and traditional weapons like swords, spears, and
+                bows to resist better-armed colonial forces. Many villages supported the movement by providing manpower,
+                intelligence, and supplies. Despite fierce resistance, the lack of coordination and modern weapons
+                ultimately led to the suppression of the revolt after months of conflict.<br><br>
+
+                <strong style="border-bottom: 2px solid rgb(22, 12, 12);">Outcome and Impact</strong><br>
+                Though the rebellion was eventually crushed, its legacy was profound. It marked an early expression of
+                resistance against colonial exploitation and inspired subsequent movements for freedom. The uprising
+                instilled pride and a sense of national consciousness among the people, making it a rallying point for
+                future generations. Over time, historians have recognized it as a precursor to larger struggles, such as
+                the 1857 Sepoy Mutiny. While the British made some administrative adjustments in response to the unrest,
+                the rebellion’s spirit continued to inspire collective action.<br><br>
+
+                <strong style="border-bottom: 2px solid rgb(22, 12, 12);">Legacy</strong><br>
+                The Paika Rebellion is remembered as a symbol of courage, sacrifice, and resilience. Literature, folk
+                songs, and museums in Odisha celebrate the bravery of the Paikas, preserving their role in India’s
+                freedom struggle. Modern scholars emphasize its importance in shaping grassroots movements and
+                resistance to injustice. The rebellion stands as a testament to the enduring spirit of
+                self-determination, reminding us that the fight for justice and dignity began long before formal
+                independence movements arose.
+            </p>
+
+
+
+        </div>
+    </div>
+
+    <button class="btn"><a href="index.html">Back to Home</a></button>
+
+</body>
+
+</html>

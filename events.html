@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Village Festivals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .card {
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h2 {
+            margin-top: 0;
+            color: #444;
+        }
+
+        .card-content .date {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* CULTURE SECTION
+================================ */
+        #culture h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .carousel {
+            position: relative;
+            width: 80%;
+            max-width: 700px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+
+        .btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: 15px;
+        }
+
+        .next {
+            right: 15px;
+        }
+
+        .dots {
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .dot {
+            display: inline-block;
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: #333;
+        }
+
+        .culture-card {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 2rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1000px;
+        }
+
+        .culture-card .carousel {
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+        }
+
+        .culture-content-card {
+            flex: 1;
+            background: #f9f6f2;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .culture-content-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #362c2c;
+            text-align: left;
+            margin: 0;
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+
+        /* FESTIVAL CARDS
+        ==============================  */
+        .festival-header h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 1em;
+            color: #362c2c;
+            margin-bottom: 10px;
+        }
+
+        .festival-header p {
+            color: #555;
+            font-size: 0.8em;
+        }
+
+        .festival-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .festival-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1.5rem;
+            padding: 1.5rem;
+            max-width: 350px;
+            transition: box-shadow 0.3s;
+        }
+
+        .festival-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .festival-content {
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .festival-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .festival-card h2 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            border-bottom: none;
+            box-shadow: none;
+        }
+
+        .festival-card h2::after {
+            display: none;
+        }
+
+        .festival-card p {
+            color: black;
+            font-size: 0.95em;
+        }
+
+        .celebrate-btn {
+            background-color: #fff;
+            color: #ff6f61;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .celebrate-btn:hover {
+            background-color: #ffe0b2;
+            transform: scale(1.05);
+        }
+
+        .particles {
+            position: absolute;
+            pointer-events: none;
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            border-radius: 50%;
+            animation: burst 0.6s ease-out forwards;
+        }
+
+        @keyframes burst {
+            from {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+
+            to {
+                opacity: 0;
+                transform: translate(var(--dx), var(--dy)) scale(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+        }
+
+        h1::after {
+            content: "";
+            display: block;
+            height: 4px;
+            width: 60%;
+            background: rgb(54, 44, 44);
+            margin: 10px auto 0;
+            border-radius: 10px;
+            animation: underline 2s infinite alternate;
+        }
+
+        @keyframes underline {
+            from {
+                width: 60%;
+                background: rgb(54, 44, 44);
+            }
+
+            to {
+                width: 80%;
+                background: rgb(54, 44, 44);
+            }
+        }
+
+        .btn {
+            margin-top: 30px;
+            margin-left: 45%;
+            margin-bottom: 2%;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgb(79, 77, 77);
+            border: none;
+            font-size: 20px;
+        }
+
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn a:visited {
+            color: white;
+        }
+
+        .btn:hover {
+            background-color: rgb(54, 44, 44);
+        }
+    </style>
+</head>
+
+<body>
+    <section id=""></section>
+    <h1>Festivals of Our Village</h1>
+
+    <div class="container">
+
+        <!-- Makara Yatra -->
+        <div class="card">
+            <img src="Assets/makara-yatra.webp" alt="Makara Yatra">
+            <div class="card-content">
+                <h2>Makara Yatra</h2>
+                <div class="date">Date: January 14</div>
+                <p>This festival celebrates the sun's movement into Capricorn. Villagers gather for early morning
+                    rituals, prayers, and feasts. It marks the start of a new agricultural cycle and offers blessings
+                    for a fruitful year.</p>
+            </div>
+        </div>
+
+        <!-- Dola -->
+        <div class="card">
+            <img src="Assets/vil6.jpg" alt="Dola">
+            <div class="card-content">
+                <h2>Dola Festival</h2>
+                <div class="date">Date: March (Full Moon Day)</div>
+                <p>Dola is celebrated with colors, music, and devotion to Lord Krishna. Swings decorated with flowers,
+                    singing, and playing with colors are integral parts of this joyous festival that strengthens
+                    community bonds.</p>
+            </div>
+        </div>
+
+        <!-- Raja -->
+        <div class="card">
+            <img src="Assets/vil4.webp" alt="Raja">
+            <div class="card-content">
+                <h2>Raja Festival</h2>
+                <div class="date">Date: Mid June</div>
+                <p>Raja celebrates fertility and the arrival of the monsoon. Women wear traditional attire, swing, sing
+                    folk songs, and prepare seasonal sweets. The entire village rejoices in playful celebrations and
+                    cultural performances.</p>
+            </div>
+        </div>
+
+        <!-- Holi -->
+        <div class="card">
+            <img src="Assets/holi.jpg" alt="Holi" style="height: 300px;">
+            <div class="card-content">
+                <h2>Holi</h2>
+                <div class="date">Date: March</div>
+                <p>The festival of colors represents the triumph of good over evil. Villagers gather in open spaces,
+                    smear colors, dance, and share festive treats, strengthening bonds among communities and spreading
+                    joy.</p>
+            </div>
+        </div>
+
+
+          <!-- Parayana -->
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGc6_WMqtm3ZTwPHtAMYhNH_EHxAzRyIeC7g&s"
+            alt="Parayana" style="height: 350px;">
+        <div class="card-content">
+            <h2>Parayana</h2>
+            <div class="date">Date: Varies</div>
+            <p>Parayana is a spiritual observance involving the reading of sacred texts. Villagers participate in
+                group readings, prayers, and discussions, fostering a sense of community and shared faith.</p>
+        </div>
+    </div>
+    <!-- KumarPurnima -->
+    <div class="card">
+        <img src="https://www.bunkarvalley.com/wp-content/uploads/2025/05/kumar-purnima.jpg" alt="KumarPurnima"
+            style="height: 350px;">
+        <div class="card-content">
+            <h2>KumarPurnima</h2>
+            <div class="date">Date: Varies</div>
+            <p>KumarPurnima is a festival dedicated to the worship of Lord Kartikeya. Villagers celebrate with
+                prayers, offerings, and cultural performances, emphasizing the importance of family and community.
+            </p>
+        </div>
+    </div>
+    
+        <!-- Dashera -->
+        <div class="card">
+            <img src="Assets/dush.jpg" alt="Dashera" style="height: 350px;">
+            <div class="card-content">
+                <h2>Dashera</h2>
+                <div class="date">Date: October</div>
+                <p>Dashera commemorates Lord Rama’s victory over Ravana. The festival is celebrated with processions,
+                    temple visits, cultural dramas, and fireworks, symbolizing righteousness and unity among villagers.
+                </p>
+            </div>
+        </div>
+
+        <!-- Rama Natak -->
+        <div class="card">
+            <img src="Assets/ram.avif" alt="Rama Natak">
+            <div class="card-content">
+                <h2>Rama Natak</h2>
+                <div class="date">Date: Varies by season</div>
+                <p>This traditional play reenacts stories from the Ramayana. Performed by local artists, it’s an
+                    important cultural event that preserves oral traditions and spiritual values of the village while
+                    entertaining audiences.</p>
+            </div>
+        </div>           
+        <button class="btn"><a href="index.html">Back to Home</a></button>
+    </div> <!-- End of .container -->
+</body>
+
+
+</html>

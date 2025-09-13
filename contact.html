@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact Us - Glassmorphism</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+        color: #111;
+    }
+
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.4);
+        z-index: 0;
+    }
+
+    .contact-card {
+        position: relative;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        width: 90%;
+        max-width: 500px;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+        text-align: center;
+        border: 1px solid rgba(255,255,255,0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .contact-card h2 {
+        margin-bottom: 25px;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    }
+
+    .contact-card input,
+    .contact-card textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 12px 0;
+        border: none;
+        border-radius: 12px;
+        outline: none;
+        background: rgba(255, 255, 255, 0.3);
+        color: #000;
+        font-size: 1rem;
+        box-sizing: border-box;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    .contact-card input:focus,
+    .contact-card textarea:focus {
+        background: rgba(255, 255, 255, 0.5);
+        transform: scale(1.02);
+    }
+
+    .contact-card input::placeholder,
+    .contact-card textarea::placeholder {
+        color: rgba(0,0,0,0.5);
+    }
+
+    .contact-card button {
+        background: linear-gradient(90deg, #ff7e5f 0%, #feb47b 100%);
+        border: none;
+        padding: 12px 25px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        color: white;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+        transition: all 0.3s ease;
+        margin-top: 10px;
+    }
+
+    .contact-card button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+        background: linear-gradient(90deg, #feb47b 0%, #ff7e5f 100%);
+    }
+
+    .map-section {
+        position: relative;
+        z-index: 1;
+        width: 90%;
+        max-width: 800px;
+        height: 300px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+        margin: 20px 0;
+        border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .map-section iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    footer {
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0,0,0,0.6);
+        color: white;
+        font-size: 0.95rem;
+        padding: 12px 0;
+        margin-top: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+        .contact-card h2 { font-size: 1.7rem; }
+        .contact-card input, .contact-card textarea { font-size: 0.95rem; }
+        .contact-card button { font-size: 0.95rem; }
+    }
+
+    @media (max-width: 480px) {
+        .contact-card { padding: 20px; }
+        .contact-card h2 { font-size: 1.4rem; }
+        .contact-card input, .contact-card textarea { font-size: 0.85rem; padding: 10px; }
+        .contact-card button { font-size: 0.85rem; padding: 10px 15px; }
+        .map-section { height: 200px; }
+    }
+</style>
+</head>
+<body>
+
+<div class="contact-card">
+    <h2>Contact Us</h2>
+    <input id="name" type="text" placeholder="Your Name" />
+    <input id="phone" type="number" placeholder="Phone Number" />
+    <input id="email" type="email" placeholder="Email Address" />
+    <textarea id="message" rows="4" placeholder="Your Message"></textarea>
+    <button onclick="sendMessage()">Send Message</button>
+</div>
+<footer>
+   <button style="border: #000; border-radius: 12px; padding: 8px 16px; background: linear-gradient(90deg, #ff7e5f 0%, #feb47b 100%); color: white; cursor: pointer;"><a href="map.html" style="text-decoration: none; color: white;">View in Map</a></button>
+</footer>
+
+<script>
+    function sendMessage() {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if(name && email && message) {
+            alert(`✅ Thank you, ${name}!\n📧 Your message has been sent!\n😊🌟💌`);
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+        } else {
+            alert("⚠️ Please fill all fields before sending! 📝");
+        }
+    }
+</script>
+
+</body>
+</html>
