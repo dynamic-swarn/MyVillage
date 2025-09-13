@@ -1,6 +1,9 @@
 .bg {
     background-image: url("Assets/background.jpg");
     height: 100vh;
+      background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 a {
@@ -15,7 +18,7 @@ a:visited {
 }
 
 nav {
-    position: fixed;
+    /* position: sticky; */
     display: flex;
     justify-content: center;      /* Center navbar content horizontally */
     align-items: center;          /* Center vertically */
@@ -29,13 +32,14 @@ nav {
     padding: 0.5rem 0;
     font-size: 0.95rem;           /* Reduce font size */
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+     flex-wrap: wrap;
 }
 
 nav a {
     color: #fff;
     font-size: 0.95rem;           /* Reduce font size for links */
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     border-radius: 6px;
     transition: background 0.2s;
 }
@@ -49,8 +53,10 @@ header {
     text-align: center;
     color: white;
     font-size: 2rem;
-    margin-top: 10rem;
+    margin-top: auto;
+     margin-bottom: auto;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+     padding: 0 1rem;
 }
 
 header h1 {
@@ -216,6 +222,39 @@ button a:visited{
 button:hover{
     background-color: rgb(54, 44, 44);
 }
+
+/* Responsive Design
+================== */
+@media (max-width: 768px) {
+    nav{
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    #about .card {
+        flex-direction: column;
+        align-items: center;
+    }
+     .card video {
+                width: 100%;
+                height: fit-content;
+                max-width: 295px;
+                border-radius: 20px;
+            }
+    .card-content {
+        text-align: center;
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+    }
+    .card-video {
+        margin-top: 1rem;
+    }
+    button{
+        margin-left: 35%;
+        padding: 8px;
+        font-size: 16px;
+    }
+}
+
 /* 
     =================
     Population section 
