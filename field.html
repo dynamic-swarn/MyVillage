@@ -16,6 +16,12 @@
             margin: 0;
         }
 
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .card {
             background-color: #ffffff;
             width: 800px;
@@ -45,50 +51,51 @@
         .card-content p {
             font-size: 16px;
             color: #555;
-            line-height: 1.5;
+            text-align: justify;
+            line-height: 1.6;
         }
 
-        .card-content button {
-            margin: 20px;
+        .back-btn {
+            margin-top: 20px;
             background: #000;
             color: #fff;
             border-radius: 10px;
             border: none;
-            padding: 8px 18px;
+            padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
             transition: background 0.2s, color 0.2s;
         }
 
-        .card-content button a {
+        .back-btn a {
             text-decoration: none;
             color: white;
         }
 
-        .card-content button:hover {
-            background: #ececec;
-            color: black;
+        .back-btn:hover {
+            background: #101010;
+            color: rgb(242, 236, 236);
         }
     </style>
 </head>
 
 <body>
-    <div class="card">
-        <img src="https://t3.ftcdn.net/jpg/03/40/70/08/360_F_340700846_nF8QmOtEj37psIWn4r5yV3FKL71lTwJ7.jpg"
-            alt="Village Landscape">
-        <div class="card-content">
-            <h2>Greenfield Village</h2>
-            <p>
-                The village field is a vast, open space surrounded by lush greenery, where nature and community come
-                together in harmony. During the day, children play and run freely, while farmers tend to their crops and
-                cattle graze peacefully. The field is dotted with seasonal flowers and shady trees, offering a perfect
-                spot for gatherings and traditional festivals. In the evenings, the golden sunlight creates a serene
-                atmosphere, and villagers often walk or relax here, sharing stories and laughter. It is not just a place
-                for work or recreation but the heart of village life, connecting people to nature and
-                tradition.<button><a href="index.html" style="text-decoration: none;">Back to Home</a></button>
-            </p>
+    <div class="container">
+        <div class="card">
+            <img src="https://t3.ftcdn.net/jpg/03/40/70/08/360_F_340700846_nF8QmOtEj37psIWn4r5yV3FKL71lTwJ7.jpg" alt="Village Landscape">
+            <div class="card-content">
+                <h2>Greenfield Village</h2>
+                <p>
+                    The village field is a vast, open space surrounded by lush greenery, where nature and community come
+                    together in harmony. During the day, children play and run freely, while farmers tend to their crops and
+                    cattle graze peacefully. The field is dotted with seasonal flowers and shady trees, offering a perfect
+                    spot for gatherings and traditional festivals. In the evenings, the golden sunlight creates a serene
+                    atmosphere, and villagers often walk or relax here, sharing stories and laughter. It is not just a place
+                    for work or recreation but the heart of village life, connecting people to nature and tradition.
+                </p>
+            </div>
         </div>
-
+        <button class="back-btn"><a href="index.html">Back to Home</a></button>
     </div>
 </body>
 

@@ -1,7 +1,7 @@
 .bg {
     background-image: url("Assets/background.jpg");
     height: 100vh;
-      background-repeat: no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -18,26 +18,25 @@ a:visited {
 }
 
 nav {
-    /* position: sticky; */
     display: flex;
-    justify-content: center;      /* Center navbar content horizontally */
-    align-items: center;          /* Center vertically */
-    gap: 1.5rem;                  /* Space between links */
-    background: rgba(0,0,0,0.35); /* Slightly dark transparent background for visibility */
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(0, 0, 0, 0.35);
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     padding: 0.5rem 0;
-    font-size: 0.95rem;           /* Reduce font size */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-     flex-wrap: wrap;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    flex-wrap: wrap;
 }
 
 nav a {
     color: #fff;
-    font-size: 0.95rem;           /* Reduce font size for links */
+    font-size: 0.95rem;
     text-decoration: none;
     padding: 0.5rem;
     border-radius: 6px;
@@ -45,7 +44,7 @@ nav a {
 }
 
 nav a:hover {
-    background: rgba(236,174,174,0.15);
+    background: rgba(236, 174, 174, 0.15);
     color: #ecaeae;
 }
 
@@ -54,9 +53,9 @@ header {
     color: white;
     font-size: 2rem;
     margin-top: auto;
-     margin-bottom: auto;
+    margin-bottom: auto;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-     padding: 0 1rem;
+    padding: 0 1rem;
 }
 
 header h1 {
@@ -70,13 +69,11 @@ header p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     overflow: hidden;
-    /* Ensures the text is hidden until typed */
     border-right: .15em solid white;
-    /* Cursor effect */
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: .15em;
-    animation: typing 3s steps(30, end), blink-caret .75s;
+    animation: typing 5s steps(30, end), blink-caret .75s;
 }
 
 @keyframes typing {
@@ -85,7 +82,7 @@ header p {
     }
 
     to {
-        width: 100%
+        width: 50%
     }
 }
 
@@ -97,7 +94,7 @@ header p {
     }
 
     50% {
-        border-color: rgb(236, 174, 174);
+        border-color: rgb(227, 217, 217);
     }
 }
 
@@ -118,7 +115,7 @@ header p {
 
 #about p {
     font-size: 16px;
-   
+
 }
 
 #about .card {
@@ -204,7 +201,8 @@ h3 {
     height: 30px;
     border-radius: 10%;
 }
-button{
+
+button {
     margin-left: 45%;
     margin-bottom: 2%;
     padding: 10px;
@@ -213,42 +211,50 @@ button{
     border: none;
     font-size: 20px;
 }
-button a{
+
+button a {
     color: white;
 }
-button a:visited{
+
+button a:visited {
     color: white;
 }
-button:hover{
+
+button:hover {
     background-color: rgb(54, 44, 44);
 }
 
 /* Responsive Design
 ================== */
 @media (max-width: 768px) {
-    nav{
+    nav {
         flex-direction: row-reverse;
         align-items: center;
     }
+
     #about .card {
         flex-direction: column;
         align-items: center;
     }
-     .card video {
-                width: 100%;
-                height: fit-content;
-                max-width: 295px;
-                border-radius: 20px;
-            }
+
+    .card video {
+        width: 100%;
+        height: fit-content;
+        max-width: 295px;
+        border-radius: 20px;
+    }
+
     .card-content {
         text-align: center;
         margin-bottom: 1rem;
         padding: 0 1rem;
     }
+
     .card-video {
         margin-top: 1rem;
     }
-    button{
+
+    button {
         margin-left: 35%;
         padding: 8px;
         font-size: 16px;
@@ -269,23 +275,27 @@ button:hover{
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .population p {
     font-size: 16px;
 }
+
 .population h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
 }
+
 li {
     text-align: left;
     margin-left: 25%;
     margin-bottom: 1%;
     font-size: 1rem;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
 }
+
 .culture-card {
     display: flex;
     flex-direction: row;
@@ -293,7 +303,7 @@ li {
     justify-content: space-between;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     padding: 2rem;
     margin: 2rem auto;
     max-width: 1000px;
@@ -308,7 +318,7 @@ li {
     padding: 2rem;
     background: #f9f6f2;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .culture-content-card p {
@@ -334,12 +344,13 @@ li {
     position: relative;
     overflow: hidden;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-track img {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
